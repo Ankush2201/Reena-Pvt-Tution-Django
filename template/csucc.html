@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .congrats-message, .redirect-notice {
+            font-size: 24px;
+            color: #4caf50; /* Green color */
+        }
+        .sendername {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function redirect() {
+            window.setTimeout(function() {
+                // Redirect to the home page
+                window.location.href = "{% url 'index' %}";
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+    </script>
+    </head>
+    <body onload="redirect()">
+        <div class="animate__animated animate__bounce">
+            🎉 Congratulations 🎉
+        </div>
+        <p class="congrats-message">We have received your query. We will soon get back to you, <span class="sendername">{{ first_name }}</span>!</p>
+        <p class="redirect-notice">You will be redirected to the homepage in 5 seconds...</p>
+    </body>
+    </html>
+    

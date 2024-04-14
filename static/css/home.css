@@ -1,0 +1,153 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa; /* Light background color */
+  color: #495057; /* Dark text color */
+  padding: 10px 40px; /* Increased padding */
+  width: 100%; /* Full width */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin-right: 20px; /* Increased margin to separate from CTA */
+}
+
+.nav-menu li {
+  margin-right: 20px; /* Increased space between menu items */
+}
+
+.nav-menu li a {
+  color: #495057; /* Dark text color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #007bff; /* Blue hover color */
+}
+
+/* Call to Action (CTA) Button */
+.nav-cta a {
+  background-color: #007bff; /* Blue button color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-cta a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Overall Page Theme */
+body {
+  background-color: #f8f9fa; /* Light background color */
+  color: #495057; /* Dark text color */
+}
+
+/* Add Morphorishm effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background: radial-gradient(circle, #fff 15%, transparent 16%) center/20px 20px;
+  z-index: -1;
+}
+
+
+@media (max-width: 768px) {
+  .navbar .nav-menu {
+      display: none; /* Hide the full menu on small screens */
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #023e8a;
+  }
+
+  .navbar .nav-menu.active {
+      display: flex; /* Show the menu when active (toggled) */
+  }
+
+  .mobile-menu span {
+      display: block; /* Show the toggle button on small screens */
+      cursor: pointer;
+  }
+}
+
+.mobile-menu span {
+  display: none; /* Hide toggle button by default */
+}
+
+.welcome-banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay for text legibility */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.welcome-banner h1 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  color: #aad4b2; /* Soft green for subheading */
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  background-color: #026e57; /* Slightly darker green for button */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #024e43; /* Darker green on hover */
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+      width: 90%; /* Adjustments for mobile viewing */
+  }
+}

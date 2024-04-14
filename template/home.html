@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reena Private Tutions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link href="{% static 'css/jquery.mb.YTPlayer.min.css' %}" media="all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    {% if user.is_authenticated %} 
+    <div class="py-2 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 d-none d-lg-block">
+                    <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a> 
+                    <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span>+91 8433776805</a> 
+                    <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span>ankushpandey436@gmail.com</a> 
+                </div>
+                <div class="col-lg-3 text-right">
+                    <a href="{% url 'logout' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Log Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+{% else %}
+    <div class="py-2 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 d-none d-lg-block">
+                    <a href="{% url 'contact' %}" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a> 
+                    <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span>+91 8433776805</a> 
+                    <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> ankushpandey436@gmail.com</a> 
+                </div>
+                <div class="col-lg-3 text-right">
+                    <a href="{% url 'login' %}" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+                    <a href="{% url 'register' %}" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+{% endif %}
+
+
+      <div class="container">
+        <div class="d-flex align-items-center">
+          <div class="site-logo">
+            <a href="{% url 'index' %}" class="d-block">
+              <img src="{% static 'images/logo.png' %}" alt="Image" class="img-fluid">
+            </a>
+          </div>
+          <div class="mr-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active">
+                  <a href="{% url 'index' %}" class="nav-link text-left">Home</a>
+                </li>
+                <li class="has-children">
+                  <a href="{% url 'about' %}" class="nav-link text-left">About Us</a>
+                  <ul class="dropdown">
+                    <li><a href="{% url 'working' %}">Our Memories</a></li>
+                    <li><a href="{% url 'about' %}">Our School</a></li>
+                  </ul>
+                {% if user.is_authenticated %}
+              </li>
+                  <a href="{% url 'contact' %}" class="nav-link text-left">Contact</a>
+                </li>
+                <li>
+                  <a href="{% url 'students' %}" class="nav-link text-left">profile</a>
+                </li>
+                {% else %}
+                <li>
+                  <a href="{% url 'contact' %}" class="nav-link text-left">Contact</a>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+          <div class="ml-auto">
+            <div class="social-wrap">
+              <a href="https://www.linkedin.com/in/ankushpandeyds4u/"><span class="icon-facebook"></span></a>
+              <a href="https://www.linkedin.com/in/ankushpandeyds4u/"><span class="icon-twitter"></span></a>
+              <a href="https://www.linkedin.com/in/ankushpandeyds4u/"><span class="icon-linkedin"></span></a>
+
+              <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+                class="icon-menu h3"></span></a>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+
+    </header>
+
+    
+    <div class="hero-slide owl-carousel site-blocks-cover">
+      <div class="intro-section" style="background-image: url('{% static 'images/hero_2.jpg' %}');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+              <h1>Reena Private Tutions</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro-section" style="background-image: url({% static 'images/hero_1.jpg' %})";>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+              <h1>Where we Live to Learn</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <div></div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center">
+          <div class="col-lg-4 mb-5">
+            <h2 class="section-title-underline mb-5">
+              <span>Why Academics Works</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+
+            <div class="feature-1 border">
+              <div class="icon-wrapper bg-primary">
+                <span class="flaticon-mortarboard text-white"></span>
+              </div>
+              <div class="feature-1-content">
+                <h2>Personalize Learning</h2>
+                <p>What sets RPT (Reena-Private-Tutions) apart is their commitment to 'Personalize Learning.' The ability to adapt teaching methods to suit each student's unique needs has profoundly impacted child's academic confidence and results. This personalized approach is what every student deserves</p>
+                <p><a href="{% url 'register'  %}" class="btn btn-primary px-4 rounded-0" >Enroll Now</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <div class="feature-1 border">
+              <div class="icon-wrapper bg-primary">
+                <span class="flaticon-school-material text-white"></span>
+              </div>
+              <div class="feature-1-content">
+                <h2>Experinced Tutors</h2>
+                <p>The 'Experienced Tutors' at RPT ( Reena-Private-Tutions ) are unmatched! Each tutor brings a wealth of knowledge and real-world insights that make learning deeply engaging and incredibly effective. It’s rare to find such a dedicated and seasoned team committed to student success.</p>
+                <p><a href="{% url 'register'  %}" class="btn btn-primary px-4 rounded-0">Enroll Now</a></p>
+              </div>
+            </div> 
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <div class="feature-1 border">
+              <div class="icon-wrapper bg-primary">
+                <span class="flaticon-library text-white"></span>
+              </div>
+              <div class="feature-1-content">
+                <h2>Regular Assessments</h2>
+                <p>we understand that the cornerstone of academic success is not just constant learning, but also constant evaluation. Assessments are meticulously designed to maintain high engagement levels and ensure that every student is on path toward enhancing their knowledge and honing their skills.</p>
+                <p><a href="{% url 'register'  %}" class="btn btn-primary px-4 rounded-0">Enroll Now</a></p>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="section-bg style-1" style="background-image: url({% static 'images/course_4.jpg' %});">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="section-title-underline style-2">
+              <span>About Reena Tutions </span>
+            </h2>
+          </div>
+          <div class="col-lg-8">
+            <p class="lead">Welcome to Reena Private Tutors, where our passion for education and dedication to student success transform lives every day.</p>
+            <p>Founded amidst the global challenges of the COVID-19 lockdown, Reena Private Tutors started as a modest initiative fueled by a profound passion for teaching and learning. What began in a small, virtual classroom quickly evolved into a robust and thriving educational platform that reaches students across diverse backgrounds.</p>
+            <p><a href="{% url 'about'  %}">Read more</a></p>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <!-- // 05 - Block -->
+   <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4">
+            <h2 class="section-title-underline">
+              <span>Testimonials</span>
+            </h2>
+          </div>
+        </div>
+
+
+        <div class="owl-slide owl-carousel">
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Aayushi Pandey</h3>
+                <span>AIML Engineer</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;Joining Reena Private Tutors was a game-changer for my education. During the critical period of lockdowns, this platform not only provided uninterrupted learning but also offered exceptional support and guidance. I managed to score over 90% in my Board exams, thanks to their expert tutors and tailored teaching strategies.&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Rohit Dabhade</h3>
+                <span>B.Com gradutes</span>
+              </div>
+            </div>
+            <div>
+              <p>I am truly grateful for the affordable yet highly effective teaching approach at Reena Private Tutors. Their commitment to making education accessible to all has made a significant difference in my life. The tutors are experienced, patient, and genuinely passionate about student success. It's more than just a tuition service; it's a community where everyone thrives."</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Pratiksha Pandey</h3>
+                <span>Parents</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;"The individual attention and personalized learning plans at Reena Private Tutors have helped my child excel in his studies and build confidence. Their regular assessments ensure he stays on track and improves continually. As a parent, it's reassuring to see tangible progress and a genuine enthusiasm for learning in your child."!&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Aayushi Parents</h3>
+                <span>Proud father</span>
+              </div>
+            </div>
+            <div>
+              <p>"Reena Private Tutors' volunteer-driven initiatives and passion for education shine through their teaching. Their tutors not only focus on academic excellence but also on developing critical thinking and problem-solving skills. My daughter's improvement in her mathematics and science subjects has been phenomenal. We are so glad we chose Reena’s tutoring services."</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>Sandeep Yadav </h3>
+                <span>Student</span>
+              </div>
+            </div>
+            <div>
+              <p>&ldquo;Studying at Reena Private Tutors has been an incredibly enriching experience. The personalized learning environment and constant encouragement from their dedicated tutors have greatly improved my understanding and performance in complex subjects. The interactive learning sessions and detailed feedback on my regular assessments have helped me hone my skills effectively. It’s not just about academics here; the support and motivation from the tutors are truly inspiring. I would recommend Reena Private Tutors to any student who's serious about achieving academic excellence and personal growth&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="ftco-testimonial-1">
+            <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+              <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid mr-3">
+              <div>
+                <h3>harsh Gautam</h3>
+                <span>Aspiring Engineer</span>
+              </div>
+            </div>
+            <div>
+              <p>As an aspiring engineer, the rigorous exam preparation provided by Reena Private Tutors was exactly what I needed. Their experienced tutors and comprehensive approach to problem-solving have greatly enhanced my analytical skills. I am now well-prepared for my college entrance exams and owe a big part of my readiness to their dedicated team."</p>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+    </div> 
+    
+
+    <div class="section-bg style-1" style="background-color: rgb(255, 0, 255);">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <span class="icon flaticon-mortarboard"></span>
+            <h3>Our Philosphy</h3>
+            <p>We believe in crafting a learning environment that is not only inclusive but also challenging, encouraging our students to exceed their potential. Our commitment to personalized learning ensures that each student receives individual attention tailored to their specific needs and learning styles.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <span class="icon flaticon-school-material"></span>
+            <h3>Academics Principle</h3>
+            <p>our academic principles are grounded in the belief that education should be transformative and accessible to all. We prioritize holistic development and academic integrity in every aspect of our teaching. By integrating cutting-edge educational technology and innovative teaching methods, we ensure that our students are not only well-prepared academically but also equipped with essential life skills</p>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+            <span class="icon flaticon-library"></span>
+            <h3>Key of Success</h3>
+            <p>we believe the keys to success in education hinge on personalized instruction, mentorship, and continuous improvement. Our tutoring approach is tailored to meet the unique needs and goals of each student, enhancing their learning potential through custom lesson plans and targeted support. Experienced educators play a critical role, guiding students through their academic journeys with patience and insight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section ftco-subscribe-1" style="background-image: url('{% static 'images/bg_1.jpg' %}')">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h2>Subscribe to us!</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,</p>
+            {% if message %}
+            <p>{{ message }}</p>
+              {% endif %}
+          </div>
+          <div class="col-lg-5">
+            <form action="" class="d-flex">
+              <form action="{% url 'submit_email' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="email" class="rounded form-control mr-2 py-3" placeholder="Enter your email" required>
+                <button class="btn btn-primary rounded py-3 px-4" type="submit">Send</button>
+            </form>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="message" >
+      
+    </div>
+   
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <p class="mb-4"><img src="{% static 'images/logo.png' %}" alt="Image" class="img-fluid"></p>
+            <p>5/E Sangharsh Nagar , Chandivali , Andheri-East</p> 
+            <p>See You Soon ..</p> 
+            <p><a href="{% url 'contact'  %}">Get in Touch with us</a></p>
+          </div>
+          <div class="col-lg-3">
+            <h3 class="footer-heading"><span>Our Campus</span></h3>
+            <ul class="list-unstyled">
+                <li><a href="{% url 'working'  %}">Acedemic</a></li>
+                <li><a href="{% url 'working'  %}">News</a></li>
+                <li><a href="{% url 'working'  %}">Our Interns</a></li>
+                <li><a href="{% url 'working'  %}">Our Leadership</a></li>
+                <li><a href="{% url 'working'  %}">Careers</a></li>
+                <!-- <li><a href="#">Human Resources</a></li> -->
+            </ul>
+          </div>
+          <div class="col-lg-3">
+              <h3 class="footer-heading"><span>Our Courses</span></h3>
+              <ul class="list-unstyled">
+                  <li><a href="{% url 'working'  %}">Math</a></li>
+                  <li><a href="{% url 'working'  %}">Science &amp; Engineering</a></li>
+                  <!-- <li><a href="#">Arts &amp; Humanities</a></li> -->
+                  <li><a href="{% url 'working'  %}">Economics &amp; Finance</a></li>
+                  <!-- <li><a href="#">Business Administration</a></li> -->
+                  <li><a href="{% url 'working'  %}">Computer Science</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-3">
+              <h3 class="footer-heading"><span>Contact</span></h3>
+              <ul class="list-unstyled">
+                  <li><a href="{% url 'working'  %}">Help Center</a></li>
+                  <li><a href="{% url 'working'  %}">Support Community</a></li>
+                  <li><a href="{% url 'working'  %}">Press</a></li>
+                  <li><a href="{% url 'working'  %}">Share Your Story</a></li>
+                  <li><a href="{% url 'working'  %}">Our Supporters</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="copyright">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i>
+                    <!-- Lixnk back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78"/></svg></div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
