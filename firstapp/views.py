@@ -23,7 +23,7 @@ def student_profile(request):
         student = Student.objects.get(first_name=logged_in_user_first_name)
     except Student.DoesNotExist:
         # If no student found with the first name, raise 404 or handle appropriately
-        raise Http404("No Student matches the given query.")
+        return render(request, 'student_NAN.html')
     
     context = {
         'student': student,

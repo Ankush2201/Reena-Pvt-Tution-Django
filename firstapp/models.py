@@ -11,6 +11,10 @@ class Student(models.Model):
     phone_number = models.CharField(max_length=10)
     date_of_joining = models.DateField()
     date_of_birth = models.DateField(null=True, blank=True)
+    address = models.TextField(default='Adresss')
+    fees_Permonth = models.FloatField(default=0.0)
+    remaining_fees = models.FloatField(default=0.0)
+    assignement = models.FileField(upload_to='student_assignments/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

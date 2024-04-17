@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #51be78;
+        }
+        h1 {
+            color: #d9534f; /* red shade for the error message */
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #51be78; /* green shade */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .button:hover {
+            background-color: #469a65;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>This Student Doesn't Exist</h1>
+        <p>We could not find the student with your credentials. Please check your information and try again.</p>
+        <a href="{% url 'index' %}" class="button">Return to Home</a>
+    </div>
+</body>
+</html>

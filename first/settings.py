@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l3*$ou8a+ariv5jy7+yfgq=f8x5vrc2(tlt(l_wcsgde=#7a82'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost' , '127.0.0.1']
 
 # settings.py
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
